@@ -181,6 +181,9 @@ export default class VideoPlayer extends React.Component {
       shouldPlay: false,
       // Error message if we are in PLAYBACK_STATES.ERROR
       error: null,
+      // Video width & height
+      videoWidth: this.props.screenSize.width,
+      videoHeight: this.props.screenSize.height,
       // Controls display state
       controlsOpacity: new Animated.Value(props.showControlsOnLoad ? 1 : 0),
       controlsState: props.showControlsOnLoad
@@ -466,6 +469,10 @@ export default class VideoPlayer extends React.Component {
       : this._playbackInstance.setStatusAsync({ shouldPlay: true });
   }
 
+  _setPlayerSize(width, height){
+    this.setState({videoWidth: width, videoHeight: height});
+  }
+
   _toggleControls = () => {
     switch (this.state.controlsState) {
       case CONTROL_STATES.SHOWN:
@@ -624,6 +631,8 @@ export default class VideoPlayer extends React.Component {
       </View>
     );
 
+    this.setState({videoWidth: videoWidth, videoHeight: videoHeight});
+
     return (
       <TouchableWithoutFeedback onPress={this._toggleControls.bind(this)}>
         <View
@@ -638,8 +647,8 @@ export default class VideoPlayer extends React.Component {
             }}
             onPlaybackStatusUpdate={this._playbackCallback.bind(this)}
             style={{
-              width: videoWidth,
-              height: videoHeight,
+              width: this.state.videoWidth,
+              height: this.state.videoHeight,
             }}
             {...otherVideoProps}
           />
