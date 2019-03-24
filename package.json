@@ -1,5 +1,5 @@
 {
-  "name": "@eshiply/eshiply-videoplayer",
+  "name": "eshiply-expo-videoplayer",
   "version": "0.4.1",
   "description": "Customizable videoplayer controls for expo",
   "author": "Abi Raja <abimanyuraja@gmail.com>",
