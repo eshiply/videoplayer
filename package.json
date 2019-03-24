@@ -1,6 +1,6 @@
 {
   "name": "eshiply-expo-videoplayer",
-  "version": "0.4.1",
+  "version": "0.4.3",
   "description": "Customizable videoplayer controls for expo",
   "author": "Abi Raja <abimanyuraja@gmail.com>",
   "main": "index.js",
