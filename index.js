@@ -546,8 +546,6 @@ export default class VideoPlayer extends React.Component {
   };
 
   render() {
-    const videoWidth = this.props.screenSize.width == 0 ? Dimensions.get('window').width : this.props.screenSize.width;
-    const videoHeight = this.props.screenSize.height == 0 ? videoWidth * (9 / 16) : this.props.screenSize.height;
     const centeredContentWidth = 60;
 
     const PlayIcon = this.props.playIcon;
@@ -602,8 +600,8 @@ export default class VideoPlayer extends React.Component {
         style={[
           {
             position: 'absolute',
-            left: (videoWidth - centeredContentWidth) / 2,
-            top: (videoHeight - centeredContentWidth) / 2,
+            left: (this.state.videoWidth - centeredContentWidth) / 2,
+            top: (this.state.videoHeight - centeredContentWidth) / 2,
             width: centeredContentWidth,
             height: centeredContentWidth,
             flexDirection: 'column',
@@ -620,8 +618,8 @@ export default class VideoPlayer extends React.Component {
       <View
         style={{
           position: 'absolute',
-          top: videoHeight / 2,
-          width: videoWidth - 40,
+          top: this.state.videoHeight / 2,
+          width: this.state.videoWidth - 40,
           marginRight: 20,
           marginLeft: 20,
         }}>
@@ -709,7 +707,7 @@ export default class VideoPlayer extends React.Component {
             style={{
               position: 'absolute',
               bottom: 0,
-              width: videoWidth,
+              width: this.state.videoWidth,
               opacity: this.state.controlsOpacity,
               flexDirection: 'row',
               alignItems: 'center',

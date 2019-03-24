@@ -1,6 +1,6 @@
 {
   "name": "eshiply-expo-videoplayer",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Customizable videoplayer controls for expo",
   "author": "Abi Raja <abimanyuraja@gmail.com>",
   "main": "index.js",
@@ -8,7 +8,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/expo/videoplayer.git"
-  },
+  }4
   "homepage": "https://github.com/expo/videoplayer",
   "bugs": {
     "url": "https://github.com/expo/videoplayer/issues"
