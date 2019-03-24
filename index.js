@@ -160,6 +160,10 @@ export default class VideoPlayer extends React.Component {
         'Pass in this function `switchToLandscape` in props to enable fullscreening'
       );
     },
+    screenSize: {
+      width: 0,
+      height: 0,
+    },
     showControlsOnLoad: false,
   };
 
@@ -535,8 +539,8 @@ export default class VideoPlayer extends React.Component {
   };
 
   render() {
-    const videoWidth = Dimensions.get('window').width;
-    const videoHeight = videoWidth * (9 / 16);
+    const videoWidth = this.props.screenSize.width == 0 ? Dimensions.get('window').width : this.props.screenSize.width;
+    const videoHeight = this.props.screenSize.height == 0 ? videoWidth * (9 / 16) : this.props.screenSize.height;
     const centeredContentWidth = 60;
 
     const PlayIcon = this.props.playIcon;
