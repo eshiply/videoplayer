@@ -2,3 +2,4 @@ node_modules/**/*
 npm-debug.*
 .DS_Store
 yarn-error.log
+examples/expo-videoplayer-examples/package-lock.json
